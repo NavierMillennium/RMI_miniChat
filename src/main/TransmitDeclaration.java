@@ -8,7 +8,7 @@ public class TransmitDeclaration extends UnicastRemoteObject implements Transmit
 		super();
 		
 	}
-	// metoda implementujaca interfejs ICallback
+	//Method which implements ICallback interface
 	public void inform(String sender, String nick, String text) throws RemoteException {
 		System.out.println(sender + " wrote: " + text);   
 	}

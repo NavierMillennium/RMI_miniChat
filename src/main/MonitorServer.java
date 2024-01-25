@@ -5,7 +5,7 @@ import java . rmi. registry . Registry ;
 import java . rmi. server . UnicastRemoteObject ;
 
 public class MonitorServer {
-	Registry reg ; /* rejestr nazw obiektow */
+	Registry reg ; /* Object names register */
 	MonitorServant servant ;
 	
 	public static void main ( String [] args ) {
@@ -19,11 +19,11 @@ public class MonitorServer {
 
 protected MonitorServer () throws RemoteException {
 	 try {
-		 /* Utworzenie rejestru nazw */
+		 /*Creating names register*/
 		 reg = LocateRegistry . createRegistry (1099);
-		 /* utworzenie obiektu dostepnego zdalnie */
+		 /*Creating objects available remotly*/
 		 servant = new MonitorServant ();
-		 /* zwiazanie z obiektem nazwy */
+		 /*Associating a name with an object*/
 		 reg. rebind (" MonitorServer ", servant );
 		 System . out . println (" Server READY ");
 	 } catch ( RemoteException e) {
